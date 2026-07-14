@@ -43,7 +43,7 @@
         OSETBaseView * view = [nativeExpressViews objectAtIndex:i];
         [list addObject:view];
         [exts addObject:@{
-            BUMMediaAdLoadingExtECPM : @(view.eCPM),
+            BUMMediaAdLoadingExtECPM : [NSString stringWithFormat:@"%ld",(long)view.eCPM],
         }];
     }
     [self.bridge nativeAd:self didLoadWithExpressViews:[list copy] exts:exts.copy];
